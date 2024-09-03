@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:TextField picking-mode="Ignore" value="filler text" name="Address" style="width: 40%; height: 10%; translate: 0 195%;" />
+    <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Host" style="width: 15%; height: 10%; translate: 540% 92%;" />
+    <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Client" style="width: 15%; height: 10%; translate: 435% -9px;" />
+    <ui:TextField picking-mode="Ignore" value="filler text" name="Lock" style="width: 25%; height: 10%; translate: 300px -125%;" />
+</ui:UXML>
