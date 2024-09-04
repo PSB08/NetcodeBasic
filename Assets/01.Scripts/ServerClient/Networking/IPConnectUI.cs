@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public class IPConnectUI : MonoBehaviour
+public class IPConnectUI : MonoBehaviour 
 {
     [SerializeField] private Button _hostBtn, _clientBtn;
     [SerializeField] private TMP_InputField _ipText, _portText;
@@ -23,7 +23,7 @@ public class IPConnectUI : MonoBehaviour
 
         _ipText.text = FindIPAddress();
         _portText.text = "7777";
-
+        
         NetworkManager.Singleton.OnClientDisconnectCallback += HandleClientDisconnected;
 
     }
@@ -57,7 +57,7 @@ public class IPConnectUI : MonoBehaviour
         bool result = ClientSingletone.Instance.GameManager.StartClientWithLocal();
     }
 
-    //ÀÔ·ÂÇÑ ip¿Í Æ÷Æ®¹øÈ£°¡ °°ÀºÁö °Ë»ç ÈÄ ¿Ã¹Ù¸£¸é ÆÐÆ®Æ÷Æ® »ý¼º
+    //ï¿½Ô·ï¿½ï¿½ï¿½ ipï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ ï¿½ï¿½ ï¿½Ã¹Ù¸ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
     private bool SetUpNetworkPassport()
     {
         var ip = _ipText.text;
@@ -71,7 +71,7 @@ public class IPConnectUI : MonoBehaviour
 
         if (!portMatch.Success || !ipMatch.Success)
         {
-            Debug.LogError("¿ÇÁö ¾ÊÀº ip¿Í Æ÷Æ®¹øÈ£ ÀÔ´Ï´Ù");
+            Debug.LogError("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ipï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½È£ ï¿½Ô´Ï´ï¿½");
             return false;
         }
 
@@ -88,7 +88,7 @@ public class IPConnectUI : MonoBehaviour
 
     private void HandleClientDisconnected(ulong clientID)
     {
-        Debug.Log(clientID + "¿¡·¯¹ß»ý");
+        Debug.Log(clientID + "ï¿½ï¿½ï¿½ï¿½ï¿½ß»ï¿½");
     }
 
 

@@ -251,10 +251,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _relayHostBtn: {fileID: 1552965407}
-  _enterLobbyBtn: {fileID: 1830748943}
+  _enterLobbyBtn: {fileID: 1672926309}
   OpenLobbyEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 46262905}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &52196352
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +585,7 @@ GameObject:
   - component: {fileID: 273691283}
   - component: {fileID: 273691285}
   - component: {fileID: 273691284}
+  - component: {fileID: 273691286}
   m_Layer: 5
   m_Name: Join
   m_TagString: Untagged
@@ -636,6 +649,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273691282}
   m_CullTransparentMesh: 1
+--- !u!114 &273691286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273691282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146db21312ba71a4aa23824d73b9f943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _joinCodeText: {fileID: 608131009}
+  _joinBtn: {fileID: 814587805}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

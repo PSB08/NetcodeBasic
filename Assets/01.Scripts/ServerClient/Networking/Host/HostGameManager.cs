@@ -47,16 +47,16 @@ public class HostGameManager : MonoBehaviour
 
         var transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
 
-        var relayServerData = new RelayServerData(_allocation, "dtls"); //udp보다 보안이 향상된 버전
+        var relayServerData = new RelayServerData(_allocation, "dtls");
         transport.SetRelayServerData(relayServerData);
 
         try
         {
-            //로비를 만들기 위한 옵션들을 넣는다.
+            //로비를 만들기 위한 옵션들
             CreateLobbyOptions lobbyOptions = new CreateLobbyOptions();
             lobbyOptions.IsPrivate = false; //로비 옵션을 만들어서 넣어줘야 한다. 만약 이걸 true로 하면 조인코드로만 참석 가능
 
-            //해당 로비 옵션에 Join코드를 넣어준다. (커스텀데이터를 이런식으로 넣는다)
+            //해당 로비 옵션에 Join코드를 넣어준다
             // Visbilty Member는 해당 로비의 멤버는 자유롭게 읽을 수 있다는 뜻.
             lobbyOptions.Data = new Dictionary<string, DataObject>()
             {

@@ -2,7 +2,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class JoinCodeConnectUI : MonoBehaviour
 {
     [SerializeField] private TMP_InputField _joinCodeText;

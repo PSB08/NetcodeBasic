@@ -42,7 +42,7 @@ public class UGSAuthWrapper
     {
         while (State == AuthState.Authenticating || State == AuthState.NotAuthenticated)
         {
-            await Task.Delay(200); //0.2초 대기
+            await Task.Delay(500); //0.5초 대기
         }
 
         return State;
@@ -78,7 +78,7 @@ public class UGSAuthWrapper
             }
 
             tries++;
-            await Task.Delay(1000); //1초에 한번씩 인증 시도
+            await Task.Delay(2000); //2초에 한번씩 인증 시도
         }
 
         if (State != AuthState.Authenticated)
