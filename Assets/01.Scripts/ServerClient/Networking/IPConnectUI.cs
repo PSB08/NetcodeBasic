@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public class IPConnectUI : MonoBehaviour 
+public class IPConnectUI : MonoBehaviour
 {
     [SerializeField] private Button _hostBtn, _clientBtn;
     [SerializeField] private TMP_InputField _ipText, _portText;
@@ -23,7 +23,7 @@ public class IPConnectUI : MonoBehaviour
 
         _ipText.text = FindIPAddress();
         _portText.text = "7777";
-        
+
         NetworkManager.Singleton.OnClientDisconnectCallback += HandleClientDisconnected;
 
     }
@@ -57,7 +57,6 @@ public class IPConnectUI : MonoBehaviour
         bool result = ClientSingletone.Instance.GameManager.StartClientWithLocal();
     }
 
-    //�Է��� ip�� ��Ʈ��ȣ�� ������ �˻� �� �ùٸ��� ��Ʈ��Ʈ ����
     private bool SetUpNetworkPassport()
     {
         var ip = _ipText.text;
