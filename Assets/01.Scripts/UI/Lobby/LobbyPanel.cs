@@ -59,27 +59,26 @@ public class LobbyPanel : MonoBehaviour
 
         try
         {
-            //로비에 질의하기 위한 질의 객체
+            
             QueryLobbiesOptions options = new QueryLobbiesOptions();
-            options.Count = 25; //페이지네이션을 위한 한페이지에 몇개 옵션
+            options.Count = 25; 
             options.Filters = new List<QueryFilter>()
             {
                 new QueryFilter(
                     field:QueryFilter.FieldOptions.AvailableSlots ,
                     op: QueryFilter.OpOptions.GT,
-                    value:"0"), //남아있는 칸이 0칸 초과인것들만
+                    value:"0"),
                 new QueryFilter(
                     field:QueryFilter.FieldOptions.IsLocked ,
                     op: QueryFilter.OpOptions.EQ,
-                    value:"0"),  //락이 0이면 락이되지 않은 애들만
+                    value:"0"),
             };
 
             QueryResponse lobbies = await Lobbies.Instance.QueryLobbiesAsync(options);
 
-            //로비 비우고
+ 
             ClearLobbies();
 
-            //다시 생성해주는 로직 여기에
             foreach (Lobby lobby in lobbies.Results)
             {
                 CreateLobbyUI(lobby);
@@ -94,7 +93,7 @@ public class LobbyPanel : MonoBehaviour
         _isRefreshing = false;
     }
 
-    //기존 있는 로비 지우기
+
     private void ClearLobbies()
     {
         foreach (LobbyUI ui in _lobbyRectlist)

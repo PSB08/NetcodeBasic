@@ -35,7 +35,7 @@ public class LobbyUI : MonoBehaviour
         try
         {
             Lobby joiningLobby = await Lobbies.Instance.JoinLobbyByIdAsync(_lobby.Id);
-            //호스트 게임매니저에서 만들었던 Data 옵션의 JoinCode를 가져옴
+           
             string joinCode = joiningLobby.Data["JoinCode"].Value;
 
             await ClientSingletone.Instance.GameManager.StartClientWithJoinCode(joinCode);

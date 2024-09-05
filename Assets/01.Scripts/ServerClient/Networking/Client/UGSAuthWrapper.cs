@@ -27,10 +27,10 @@ public class UGSAuthWrapper
         {
             return State;
         }
-        if (State == AuthState.Authenticating) //이미 인증시도중이라면
+        if (State == AuthState.Authenticating)
         {
             Debug.LogWarning("Already authenticating!");
-            await Authenticating(); //대기
+            await Authenticating();
             return State;
         }
 
@@ -42,7 +42,7 @@ public class UGSAuthWrapper
     {
         while (State == AuthState.Authenticating || State == AuthState.NotAuthenticated)
         {
-            await Task.Delay(500); //0.5초 대기
+            await Task.Delay(500); 
         }
 
         return State;
@@ -78,7 +78,7 @@ public class UGSAuthWrapper
             }
 
             tries++;
-            await Task.Delay(2000); //2초에 한번씩 인증 시도
+            await Task.Delay(2000); 
         }
 
         if (State != AuthState.Authenticated)

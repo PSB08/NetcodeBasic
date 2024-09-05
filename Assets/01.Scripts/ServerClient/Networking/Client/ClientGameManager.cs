@@ -17,7 +17,6 @@ public class ClientGameManager
 
     public async Task<bool> InitAsync()
     {
-        //플레이어 인증 부분 들어갈 예정.
         await UnityServices.InitializeAsync();
 
         AuthState authState = await UGSAuthWrapper.DoAuth();
