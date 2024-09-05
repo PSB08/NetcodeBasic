@@ -26,6 +26,12 @@ public class LobbyUI : MonoBehaviour
         _enterBtn.onClick.AddListener(HandleEnterBtnClick);
     }
 
+    public void EnterRoom()
+    {
+        SetRoomTemplate(_lobby);
+    }
+
+
     private void Awake()
     {
         _rectTrm = GetComponent<RectTransform>();
