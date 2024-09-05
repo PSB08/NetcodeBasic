@@ -8,6 +8,7 @@ using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Unity.Services.Authentication;
 
 
 
@@ -17,7 +18,11 @@ public class ClientGameManager
 
     public async Task<bool> InitAsync()
     {
-        await UnityServices.InitializeAsync();
+
+        InitializationOptions initializationOptions = new InitializationOptions();
+        initializationOptions.SetProfile($"UUID_{UnityEngine.Random.Range(100000000, 999999999)}");
+        await UnityServices.InitializeAsync(initializationOptions);
+        Debug.Log(AuthenticationService.Instance.Profile);
 
         AuthState authState = await UGSAuthWrapper.DoAuth();
 

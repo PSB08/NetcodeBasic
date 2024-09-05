@@ -42,7 +42,7 @@ public class UGSAuthWrapper
     {
         while (State == AuthState.Authenticating || State == AuthState.NotAuthenticated)
         {
-            await Task.Delay(500); 
+            await Task.Delay(500);
         }
 
         return State;
@@ -58,6 +58,8 @@ public class UGSAuthWrapper
         {
             try
             {
+
+
                 await AuthenticationService.Instance.SignInAnonymouslyAsync();
 
                 if (AuthenticationService.Instance.IsSignedIn && AuthenticationService.Instance.IsAuthorized)
@@ -78,7 +80,7 @@ public class UGSAuthWrapper
             }
 
             tries++;
-            await Task.Delay(2000); 
+            await Task.Delay(2000);
         }
 
         if (State != AuthState.Authenticated)
